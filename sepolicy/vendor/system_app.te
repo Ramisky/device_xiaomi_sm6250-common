@@ -7,6 +7,9 @@ allow system_app vendor_sysfs_battery_supply:dir { search };
 allow system_app vendor_sysfs_battery_supply:file rw_file_perms;
 allow system_app sysfs_thermal:file rw_file_perms;
 
+# Battery Health
+r_dir_file(system_app, sysfs_battery_supply);
+
 # Fastcharge
 allow system_app sysfs_fcharge:file { open read getattr write };
 
